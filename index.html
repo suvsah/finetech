@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finetech Marketplace</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Finetech Marketplace</h1>
+        <p>Buy and sell fintech-friendly digital tools and resources.</p>
+      </div>
+      <div class="header-stats" aria-label="Marketplace summary">
+        <p><strong id="headerListings">0</strong> listings</p>
+        <p><strong id="headerOrders">0</strong> orders</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls">
+        <div class="controls-heading">
+          <h2>Discover Products</h2>
+          <button id="clearFiltersBtn" class="secondary">Clear filters</button>
+        </div>
+
+        <div class="control-row">
+          <input id="searchInput" type="text" placeholder="Search products..." aria-label="Search products" />
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="analytics">Analytics</option>
+            <option value="security">Security</option>
+            <option value="automation">Automation</option>
+            <option value="compliance">Compliance</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <label for="maxPrice">Max price: <span id="maxPriceValue">$500</span></label>
+          <input id="maxPrice" type="range" min="50" max="500" step="10" value="500" aria-label="Maximum price" />
+          <select id="sortBy" aria-label="Sort products">
+            <option value="relevance">Sort: Relevance</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="ratingDesc">Rating</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="panel products">
+        <div class="section-header">
+          <h2>Marketplace Listings</h2>
+          <p id="resultsCount" class="muted"></p>
+        </div>
+        <div id="productsGrid" class="grid"></div>
+      </section>
+
+      <aside class="panel side">
+        <section>
+          <h2>Cart</h2>
+          <ul id="cartList" class="list"></ul>
+          <p class="total">Total: <strong id="cartTotal">$0.00</strong></p>
+          <button id="placeOrderBtn" class="primary" type="button">Place Order</button>
+        </section>
+
+        <section>
+          <h2>Wishlist</h2>
+          <ul id="wishlist" class="list"></ul>
+        </section>
+
+        <section>
+          <h2>Messages</h2>
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <form id="messageForm" class="message-form">
+            <input id="messageInput" type="text" placeholder="Message a seller..." required />
+            <button type="submit" class="primary">Send</button>
+          </form>
+        </section>
+      </aside>
+
+      <section class="panel seller">
+        <h2>Seller Dashboard</h2>
+        <form id="productForm" class="product-form">
+          <input id="newTitle" placeholder="Product title" minlength="3" required />
+          <select id="newCategory" required>
+            <option value="analytics">Analytics</option>
+            <option value="security">Security</option>
+            <option value="automation">Automation</option>
+            <option value="compliance">Compliance</option>
+          </select>
+          <input id="newPrice" type="number" min="1" step="1" placeholder="Price" required />
+          <input id="newRating" type="number" min="1" max="5" step="0.1" placeholder="Rating" required />
+          <button type="submit" class="primary">Add Listing</button>
+        </form>
+        <div class="stats">
+          <p><strong id="statListings">0</strong> listings</p>
+          <p><strong id="statOrders">0</strong> orders</p>
+          <p><strong id="statRevenue">$0.00</strong> revenue</p>
+        </div>
+        <section>
+          <h3>Orders</h3>
+          <ul id="orders" class="list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <template id="productCardTemplate">
+      <article class="card">
+        <h3 class="title"></h3>
+        <p class="meta"></p>
+        <p class="price"></p>
+        <p class="rating"></p>
+        <div class="actions">
+          <button class="add-cart" type="button">Add to cart</button>
+          <button class="add-wishlist secondary" type="button">Wishlist</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
