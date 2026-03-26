@@ -1,0 +1,91 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f2f8ef 0%, #f8fbf6 100%);
+  color: #16351f;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 24px rgba(16, 54, 28, 0.08);
+}
+
+.badge {
+  display: inline-block;
+  background: #def4d8;
+  color: #246634;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+}
+
+.hero h1 {
+  margin: 0.8rem 0 0.5rem;
+}
+
+.stats {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.statCard {
+  background: #fff;
+  border-left: 5px solid #4caf50;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(16, 54, 28, 0.07);
+}
+
+.statCard h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2f5e3a;
+}
+
+.value {
+  margin: 0.4rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.note {
+  margin: 0;
+  color: #3e5f47;
+  font-size: 0.9rem;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 8px 16px rgba(16, 54, 28, 0.07);
+}
+
+.panel ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.panel li + li {
+  margin-top: 0.35rem;
+}
